@@ -31,6 +31,14 @@ public static function getData(){
     return (array) json_decode($oldData);
 }
 
+public static function update($id, $data){
+
+    $oldData = self::getData();
+    $oldData[$id] = $data;
+    self::saveData($oldData);
+    return $oldData[$id];
+
+}
 
 
 }
